@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    target = os.environ.get('TARGET', 'World')
+    return f'Hello {target}!'
 
 @app.route('/calc')
 def calc():
